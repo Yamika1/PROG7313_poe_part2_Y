@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">prog7313_poe_part2</string>
+    <string name="no_account_sign_up_here">No Account? Sign up here</string>
+    <string name="log_in">Log in</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="recent_activity">RECENT ACTIVITY</string>
+    <string name="download">Download</string>
+    <string name="upload">Upload</string>
+    <string name="oct_01_2023">Oct 01, 2023</string>
+    <string name="xlsx">XLSX</string>
+    <string name="csv">CSV</string>
+    <string name="pdf">PDF</string>
+    <string name="xlsx1">XLSX</string>
+    <string name="csv1">CSV</string>
+    <string name="pdf1">PDF</string>
+    <string name="standard_monthly_report">Standard Monthly Report</string>
+    <string name="october_2023">October 2023</string>
+    <string name="oct_31_2023">Oct 31, 2023</string>
+    <string name="statements">Statements</string>
+    <string name="formats">FORMATS:</string>
+    <string name="time_period">TIME PERIOD</string>
+</resources>
