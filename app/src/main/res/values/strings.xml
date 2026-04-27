@@ -22,12 +22,10 @@
     <string name="formats">FORMATS:</string>
     <string name="time_period">TIME PERIOD</string>
     <string name="search">Search</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="closed_nav">Open Navigation Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <string-array name="statements_array">
-        <item>Income</item>
-        <item>Expense</item>
-        <item>Savings</item>
-        <item>Transfer</item>
-    </string-array>
 </resources>

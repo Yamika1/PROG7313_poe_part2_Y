@@ -25,6 +25,8 @@ class Statements : AppCompatActivity() {
         search_button.setOnClickListener() {
 
 
+
+
         }
         val getToActivity = findViewById<ImageButton>(R.id.backbutton)
         getToActivity.setOnClickListener {

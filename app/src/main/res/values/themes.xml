@@ -4,13 +4,20 @@
         <!-- Customize your light theme here. -->
         <item name="colorPrimary">@color/blue</item>
         <item name="colorPrimaryVariant">@color/blue</item>
-        <item name="android:statusBarColor">@color/blue</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <item name="colorSecondary">@color/blue2</item>
+        <item name="colorSecondaryVariant">@color/blue2</item>
+        <item name="colorOnSecondary">@color/yellow</item>
     </style>
+
+
 
     <style name="Theme.Prog7313_poe_part2" parent="Base.Theme.Prog7313_poe_part2" />
 
-<style name="App.Custom.Indicator" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
-    <item name="android:color">@color/yellow</item>
+<style name="DialogAnimation">
+    <item name="android:windowEnterAnimation">@anim/slide_m</item>
+    <item name="android:windowExitAnimation">@anim/slide_out</item>
 </style>
 
 </resources>
