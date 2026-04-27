@@ -17,26 +17,21 @@ import com.google.android.material.navigation.NavigationView
 
 class Register : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-
-    // global declarations
-
     private lateinit var fab: FloatingActionButton
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var bottomNavigationView: BottomNavigationView
     private lateinit var navigationView: NavigationView
     private lateinit var toolbar: Toolbar
 
-
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-
         setContentView(R.layout.activity_register)
+
+        fab = findViewById(R.id.fab)
         toolbar = findViewById(R.id.toolbar)
-        drawerLayout = findViewById(R.id.drawerLayout)
-        navigationView = findViewById(R.id.navigationView)
+        drawerLayout = findViewById(R.id.drawer_layout)
+        navigationView = findViewById(R.id.nav_view)
         bottomNavigationView = findViewById(R.id.bottomNavigationView)
 
         setSupportActionBar(toolbar)
@@ -49,7 +44,7 @@ class Register : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
         navigationView.setNavigationItemSelectedListener(this)
 
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.drawer_layout)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
@@ -57,7 +52,7 @@ class Register : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
 
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .replace(R.id.frame_container, HomeFragment())
+                .replace(R.id.fragment_container, HomeFragment())
                 .commit()
             navigationView.setCheckedItem(R.id.nav_home)
         }
@@ -86,13 +81,6 @@ class Register : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             drawerLayout.closeDrawer(GravityCompat.START)
         } else {
             super.onBackPressed()
-        }
-
-
-    ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
         }
     }
 }
