@@ -12,9 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Prog7313_poe_part2">
         <activity
-            android:name=".Statements"
-            android:parentActivityName=".MainActivity"
+            android:name=".Register"
             android:exported="false" />
+        <activity
+            android:name=".Statements"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
