@@ -21,4 +21,13 @@
     <string name="statements">Statements</string>
     <string name="formats">FORMATS:</string>
     <string name="time_period">TIME PERIOD</string>
+    <string name="search">Search</string>
+
+
+    <string-array name="statements_array">
+        <item>Income</item>
+        <item>Expense</item>
+        <item>Savings</item>
+        <item>Transfer</item>
+    </string-array>
 </resources>
