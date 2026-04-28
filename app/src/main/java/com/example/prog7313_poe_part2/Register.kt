@@ -3,7 +3,7 @@ package com.example.prog7313_poe_part2
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
-import android.widget.Toolbar
+import androidx.appcompat.widget.Toolbar
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
@@ -37,7 +37,7 @@ class Register : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         setSupportActionBar(toolbar)
         val toggle = ActionBarDrawerToggle(
             this, drawerLayout, toolbar,
-            R.string.open_nav, R.string.close_nav
+            R.string.open_nav, R.string.closed_nav
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
