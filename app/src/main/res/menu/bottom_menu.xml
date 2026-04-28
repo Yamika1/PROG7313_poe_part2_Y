@@ -8,13 +8,13 @@
         android:icon="@drawable/baseline_home_24"/>
 
     <item
-        android:id="@+id/shorts"
+        android:id="@+id/wallet"
         android:title="Wallet"
         android:icon="@drawable/baseline_account_balance_wallet_24"
         />
 
     <item
-        android:id="@+id/subscriptions"
+        android:id="@+id/settings"
         android:title="Settings"
         android:icon="@drawable/settings" />
     <item

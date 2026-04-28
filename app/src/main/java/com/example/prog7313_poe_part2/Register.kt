@@ -58,6 +58,7 @@ class Register : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         }
     }
 
+
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val fragment = when (item.itemId) {
             R.id.nav_home -> HomeFragment()

@@ -12,6 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Prog7313_poe_part2">
         <activity
+            android:name=".Costs"
+            android:exported="false" />
+        <activity
+            android:name=".Expenses"
+            android:exported="false" />
+        <activity
             android:name=".Register"
             android:exported="false" />
         <activity
