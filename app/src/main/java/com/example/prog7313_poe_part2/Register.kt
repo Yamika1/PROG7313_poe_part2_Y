@@ -3,10 +3,11 @@ package com.example.prog7313_poe_part2
 import android.os.Bundle
 import android.view.MenuItem
 import android.widget.Toast
-import android.widget.Toolbar
+import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -37,7 +38,7 @@ class Register : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
         setSupportActionBar(toolbar)
         val toggle = ActionBarDrawerToggle(
             this, drawerLayout, toolbar,
-            R.string.open_nav, R.string.close_nav
+            R.string.open_nav, R.string.closed_nav
         )
         drawerLayout.addDrawerListener(toggle)
         toggle.syncState()
@@ -50,6 +51,16 @@ class Register : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             insets
         }
 
+        // Modern back press handling — replaces deprecated onBackPressed()
+        onBackPressedDispatcher.addCallback(this) {
+            if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
+                drawerLayout.closeDrawer(GravityCompat.START)
+            } else {
+                isEnabled = false
+                onBackPressedDispatcher.onBackPressed()
+            }
+        }
+
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, HomeFragment())
@@ -57,7 +68,6 @@ class Register : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             navigationView.setCheckedItem(R.id.nav_home)
         }
     }
-
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         val fragment = when (item.itemId) {
@@ -75,13 +85,5 @@ class Register : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             .commit()
         drawerLayout.closeDrawer(GravityCompat.START)
         return true
-    }
-
-    override fun onBackPressed() {
-        if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
-            drawerLayout.closeDrawer(GravityCompat.START)
-        } else {
-            super.onBackPressed()
-        }
     }
 }
