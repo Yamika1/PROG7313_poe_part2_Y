@@ -19,6 +19,8 @@ private lateinit var editTextText: EditText
     private lateinit var button2: Button
    // private lateinit var db: AppDatabase
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()

@@ -303,8 +303,8 @@
 
     <Button
         android:id="@+id/button7"
-        android:layout_width="80dp"
-        android:layout_height="61dp"
+        android:layout_width="88dp"
+        android:layout_height="59dp"
         android:backgroundTint="#FDD20A"
         android:text="@string/upload"
         android:textColor="@color/black"
