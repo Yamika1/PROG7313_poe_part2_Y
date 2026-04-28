@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Prog7313_poe_part2">
         <activity
+            android:name=".Navigation"
+            android:exported="false" />
+        <activity
             android:name=".UserGoals"
             android:exported="false" />
         <activity
