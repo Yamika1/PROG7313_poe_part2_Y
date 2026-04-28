@@ -27,6 +27,10 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="take_photo">Take Photo</string>
+    <string name="enter_the_maximum_goal">Enter the maximum goal</string>
+    <string name="enter_the_minimum_goal">Enter the minimum goal</string>
+    <string name="goals">Goals</string>
+    <string name="save">Save</string>
 
 
 </resources>

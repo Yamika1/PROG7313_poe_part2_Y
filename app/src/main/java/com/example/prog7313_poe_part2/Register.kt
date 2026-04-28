@@ -51,7 +51,7 @@ class Register : AppCompatActivity(), NavigationView.OnNavigationItemSelectedLis
             insets
         }
 
-        // Modern back press handling — replaces deprecated onBackPressed()
+
         onBackPressedDispatcher.addCallback(this) {
             if (drawerLayout.isDrawerOpen(GravityCompat.START)) {
                 drawerLayout.closeDrawer(GravityCompat.START)

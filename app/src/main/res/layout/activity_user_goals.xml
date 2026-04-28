@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".UserGoals">
+
+    <EditText
+        android:id="@+id/maximum"
+        android:layout_width="241dp"
+        android:layout_height="49dp"
+        android:background="@drawable/round"
+        android:ems="10"
+        android:hint="@string/enter_the_maximum_goal"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="#78909C"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.47"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.428" />
+
+    <EditText
+        android:id="@+id/minimum"
+        android:layout_width="251dp"
+        android:layout_height="48dp"
+        android:background="@drawable/round"
+        android:ems="10"
+        android:hint="@string/enter_the_minimum_goal"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColorHint="#78909C"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.312" />
+
+    <TextView
+        android:id="@+id/goals"
+        android:layout_width="108dp"
+        android:layout_height="60dp"
+        android:text="@string/goals"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.14" />
+
+    <Button
+        android:id="@+id/save"
+        android:layout_width="94dp"
+        android:layout_height="54dp"
+        android:text="@string/save"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:backgroundTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.728" />
+</androidx.constraintlayout.widget.ConstraintLayout>
