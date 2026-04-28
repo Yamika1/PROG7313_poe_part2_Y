@@ -13,6 +13,10 @@
         android:theme="@style/Theme.Prog7313_poe_part2">
         <activity
             android:name=".Home"
+            android:name=".Navigation"
+            android:exported="false" />
+        <activity
+            android:name=".UserGoals"
             android:exported="false" />
         <activity
             android:name=".Take_photo"

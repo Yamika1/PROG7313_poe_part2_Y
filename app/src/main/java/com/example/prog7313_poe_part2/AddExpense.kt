@@ -1,20 +1,18 @@
 package com.example.prog7313_poe_part2
 
 import android.app.DatePickerDialog
+import android.icu.util.Calendar
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-import android.widget.ImageButton
 import android.widget.LinearLayout
-import android.icu.util.Calendar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 
-class Costs : AppCompatActivity() {
+class AddExpense : AppCompatActivity() {
+
+    // global declarations
 
     private lateinit var editTextAmount: EditText
     private lateinit var editTextDate: EditText
@@ -31,10 +29,10 @@ class Costs : AppCompatActivity() {
 
     private var selectedCategory = "Groceries"
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
-        setContentView(R.layout.activity_costs)
+        setContentView(R.layout.activity_add_expense)
 
         // typecasting
         editTextAmount = findViewById(R.id.editTextAmount)
@@ -81,14 +79,8 @@ class Costs : AppCompatActivity() {
         buttonCancel.setOnClickListener {
             finish()
         }
-
-
-    ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
     }
+
     private fun selectCategory(selectedRow: LinearLayout, category: String) {
         rowGroceries.setBackgroundResource(R.drawable.bg_white_card)
         rowTransport.setBackgroundResource(R.drawable.bg_white_card)
@@ -146,5 +138,4 @@ class Costs : AppCompatActivity() {
 
         datePickerDialog.show()
     }
-
 }
