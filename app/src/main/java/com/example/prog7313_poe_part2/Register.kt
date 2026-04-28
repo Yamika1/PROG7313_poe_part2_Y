@@ -13,6 +13,8 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
+import data.database.AppDatabase
+import data.User
 
 class Register : AppCompatActivity(){
 
@@ -27,7 +29,7 @@ class Register : AppCompatActivity(){
     private lateinit var buttonLogin : Button
 
     private lateinit var buttonRegister : Button
-    private lateinit var db: RoomDatabase
+    private lateinit var db: AppDatabase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -58,27 +60,25 @@ class Register : AppCompatActivity(){
     }
 
         private fun registerUser() {
-            //get the text from the input fields and remove extra spaces. Android studio doesn't except raw data, data that the user enters, it needs to be converted and stored in a variable first
+
             val firstName = editTextFName.text.toString().trim()
             val lastName = editTextLName.text.toString().trim()
             val email = editTextEmail.text.toString().trim()
-            val userName = editTextUsername.text.toString().trim()  // spaces must be removed because the database could be sensitive to the spaces
+            val userName = editTextUsername.text.toString().trim()
             val password = editTextPassword.text.toString().trim()
             val confirmPassword = editTextConfirmPassword.text.toString().trim()
 
-           db = RoomDatabase.getDatabase(this)
+           db = AppDatabase.getDatabase(this)
 
             buttonRegister.setOnClickListener {
                 registerUser()
             }
 
-            //button for when the users already have an account
+
             buttonLogin.setOnClickListener {
-                openLoginScreen() //user will be directed to log in screen
+                openLoginScreen()
             }
 
-            //Validation
-            //checks if the fields are empty
 
             if (firstName.isEmpty() || lastName.isEmpty()|| email.isEmpty() || userName.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
@@ -90,21 +90,20 @@ class Register : AppCompatActivity(){
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
             }
 
-            //database operation
-            //lifecycleScope.launch runs code in the background
+
             lifecycleScope.launch {
 
 
-                //check first to see if the user already exists in the database
+
                 val existingUser = db.userDao().getUserByUsername(userName)
 
                 if (existingUser != null) {
-                    //if user exists,show message on screen
+
                     runOnUiThread {
                         Toast.makeText(this@Register, "Username already exists", Toast.LENGTH_SHORT).show()
                     }
                 } else {
-                    //if user does not exist, create a new user object
+
 
                     val newUser = User(
                         firstName = firstName,
@@ -114,10 +113,10 @@ class Register : AppCompatActivity(){
                         password = password
                     )
 
-                    //insert new user into the database
+
                     db.userDao().insertUser(newUser)
 
-                    //show success message and move to login page
+
                     runOnUiThread {
                         Toast.makeText(this@Register, "Registration successful", Toast.LENGTH_SHORT)
                             .show()

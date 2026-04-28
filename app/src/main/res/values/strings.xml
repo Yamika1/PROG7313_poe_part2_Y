@@ -38,4 +38,20 @@
     <string name="profile_pic">Profile Pic</string>
     <string name="confirm_password">Confirm Password</string>
     <string name="already_have_an_account_click_here_to_login">Already have an account? Click here to login</string>
+
+    <string name="welcome">Welcome!</string>
+    <string name="search_transactions">Search Transactions</string>
+    <string name="download_statement">Download Statement</string>
+    <string name="expense_entry">Expense Entry</string>
+    <string name="category_amounts">Category Amounts</string>
+    <string name="progress_dashboard">Progress Dashboard</string>
+    <string name="current_balance_123456_00">Current Balance 123456.00</string>
+    <string name="logged_in_as_user">LOGGED IN AS: User</string>
+    <string name="home">HOME</string>
+    <string name="stats">STATS</string>
+    <string name="add">Add</string>
+    <string name="add_budget">ADD BUDGET</string>
+    <string name="settings">SETTINGS</string>
+    <string name="rewards">REWARDS</string>
+    <string name="wallet">WALLET</string>
 </resources>

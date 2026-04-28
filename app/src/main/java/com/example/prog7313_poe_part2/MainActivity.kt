@@ -10,6 +10,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import data.database.AppDatabase
 
 class MainActivity : AppCompatActivity() {
     private lateinit var textView: TextView
@@ -17,7 +18,7 @@ private lateinit var editTextText: EditText
     private lateinit var editTextText2: EditText
     private lateinit var button: Button
     private lateinit var button2: Button
-   // private lateinit var db: AppDatabase
+    private lateinit var db: AppDatabase
 
 
 

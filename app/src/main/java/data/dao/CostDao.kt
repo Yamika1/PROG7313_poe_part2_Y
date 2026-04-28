@@ -1,19 +1,20 @@
 package data.dao
 
-import com.example.prog7313_poe_part2.Costs
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import data.Cost
 
 
 @Dao
 interface CostDao {
   @Insert
-  suspend fun insertCost(expense:Costs)
+  suspend fun insertCost(expense: Cost)
 
     @Query("SELECT*FROM costs")
-    suspend fun getAllCosts():List<Costs>
+    suspend fun getAllCosts():List<Cost>
 
-
+  @Query("SELECT SUM(amount) FROM costs")
+  suspend fun getTotalBalance(): Double?
 }
