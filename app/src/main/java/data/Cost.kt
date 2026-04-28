@@ -1,4 +1,4 @@
-package com.example.prog7313_poe_part2.database
+package data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
