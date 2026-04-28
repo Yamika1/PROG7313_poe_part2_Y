@@ -9,6 +9,7 @@ import data.Cost
 import data.CycleGoal
 import data.User
 import data.dao.CostDao
+import data.dao.CycleDao
 
 @Database(
     entities=[User::class, Cost::class, CycleGoal::class],
@@ -17,7 +18,7 @@ import data.dao.CostDao
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
-    abstract fun cycleDao(): CycleGoal
+    abstract fun cycleDao(): CycleDao
     abstract fun costDao() : CostDao
 
     companion object{
