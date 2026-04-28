@@ -27,5 +27,14 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-
+    <string name="create_new_account">Create New Account</string>
+    <string name="create_new">Create New</string>
+    <string name="budgetbee">BudgetBee</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="email">Email</string>
+    <string name="register">Register</string>
+    <string name="profile_pic">Profile Pic</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account_click_here_to_login">Already have an account? Click here to login</string>
 </resources>
