@@ -3,26 +3,19 @@ package com.example.prog7313_poe_part2
 import android.content.Intent
 import android.graphics.Paint
 import android.os.Bundle
-import android.view.MenuItem
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
-import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
-import androidx.core.view.GravityCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.lifecycle.lifecycleScope
-import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.navigation.NavigationView
-import data.User
 import kotlinx.coroutines.launch
+import data.database.AppDatabase
+import data.User
 
 class Register : AppCompatActivity(){
 
@@ -37,7 +30,9 @@ class Register : AppCompatActivity(){
     private lateinit var buttonLogin : Button
 
     private lateinit var buttonRegister : Button
-    private lateinit var db: RoomDatabase
+
+    private lateinit var imageButtonProfilePic : ImageButton
+    private lateinit var db: AppDatabase
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,6 +40,7 @@ class Register : AppCompatActivity(){
         enableEdgeToEdge()
         setContentView(R.layout.activity_register)
 
+        imageButtonProfilePic = findViewById(R.id.imageButtonProfilePic)
         heading = findViewById(R.id.heading)
         editTextFName = findViewById(R.id.editTextFName)
         editTextLName = findViewById(R.id.editTextLName)
@@ -54,7 +50,14 @@ class Register : AppCompatActivity(){
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword)
         buttonLogin = findViewById(R.id.buttonLogin)
         buttonRegister = findViewById(R.id.buttonRegister)
+        db = AppDatabase.getDatabase(this)
+
         heading.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+
+
+        buttonRegister.setOnClickListener {
+            registerUser()
+        }
 
         buttonLogin.setOnClickListener {
             openLoginScreen()
@@ -68,53 +71,40 @@ class Register : AppCompatActivity(){
     }
 
     private fun registerUser() {
-        //get the text from the input fields and remove extra spaces. Android studio doesn't except raw data, data that the user enters, it needs to be converted and stored in a variable first
+
         val firstName = editTextFName.text.toString().trim()
         val lastName = editTextLName.text.toString().trim()
         val email = editTextEmail.text.toString().trim()
-        val userName = editTextUsername.text.toString().trim()  // spaces must be removed because the database could be sensitive to the spaces
+        val userName = editTextUsername.text.toString().trim()
         val password = editTextPassword.text.toString().trim()
         val confirmPassword = editTextConfirmPassword.text.toString().trim()
 
-        db = RoomDatabase.getDatabase(this)
 
-        buttonRegister.setOnClickListener {
-            registerUser()
-        }
 
-        //button for when the users already have an account
-        buttonLogin.setOnClickListener {
-            openLoginScreen() //user will be directed to log in screen
-        }
-
-        //Validation
-        //checks if the fields are empty
 
         if (firstName.isEmpty() || lastName.isEmpty()|| email.isEmpty() || userName.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
             Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
-            return //stops function if validation fails
+            return
 
         }
-        //check if passwords match
+
         if (password != confirmPassword) {
-            Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Passwords don't match", Toast.LENGTH_SHORT).show()
+            return
         }
 
-        //database operation
-        //lifecycleScope.launch runs code in the background
+
         lifecycleScope.launch {
-
-
-            //check first to see if the user already exists in the database
             val existingUser = db.userDao().getUserByUsername(userName)
 
+
             if (existingUser != null) {
-                //if user exists,show message on screen
+
                 runOnUiThread {
-                    Toast.makeText(this@Register, "Username already exists", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@Register, "This username already exists", Toast.LENGTH_SHORT).show()
                 }
             } else {
-                //if user does not exist, create a new user object
+
 
                 val newUser = User(
                     firstName = firstName,
@@ -124,12 +114,12 @@ class Register : AppCompatActivity(){
                     password = password
                 )
 
-                //insert new user into the database
+
                 db.userDao().insertUser(newUser)
 
-                //show success message and move to login page
+
                 runOnUiThread {
-                    Toast.makeText(this@Register, "Registration successful", Toast.LENGTH_SHORT)
+                    Toast.makeText(this@Register, "New account successfully created", Toast.LENGTH_SHORT)
                         .show()
 
                     clearFields()
@@ -143,7 +133,7 @@ class Register : AppCompatActivity(){
 
 
     private fun openLoginScreen() {
-        val intent = Intent(this, Register::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         startActivity(intent)
         finish()
 
