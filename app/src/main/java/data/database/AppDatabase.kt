@@ -1,6 +1,6 @@
 package data.database
 
-import Data.dao.UserDao
+import data.dao.UserDao
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
@@ -9,6 +9,7 @@ import data.Cost
 import data.CycleGoal
 import data.User
 import data.dao.CostDao
+import data.dao.CycleDao
 
 @Database(
     entities=[User::class, Cost::class, CycleGoal::class],
@@ -17,7 +18,7 @@ import data.dao.CostDao
 )
 abstract class AppDatabase : RoomDatabase() {
     abstract fun userDao(): UserDao
-    abstract fun cycleDao(): CycleGoal
+    abstract fun cycleDao(): CycleDao
     abstract fun costDao() : CostDao
 
     companion object{
@@ -28,7 +29,7 @@ abstract class AppDatabase : RoomDatabase() {
             return INSTANCE?:synchronized(this){
                 val instance = Room.databaseBuilder(
                     context.applicationContext,
-                    RoomDatabase::class.java,
+                    AppDatabase::class.java,
                     "BudgetBee_database"
                 ).build()
                 INSTANCE = instance as data.database.AppDatabase?

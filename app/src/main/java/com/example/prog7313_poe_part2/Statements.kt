@@ -19,7 +19,7 @@ class Statements : AppCompatActivity() {
 
         val getToActivity = findViewById<ImageButton>(R.id.backbutton)
         getToActivity.setOnClickListener {
-            val intent = Intent(getApplicationContext(), MainActivity::class.java)
+            val intent = Intent(getApplicationContext(), Home::class.java)
             startActivity(intent)
         }
 
