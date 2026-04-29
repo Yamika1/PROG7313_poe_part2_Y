@@ -25,6 +25,10 @@ class Home : AppCompatActivity() {
     private lateinit var buttonDownloadStatement: Button
     private lateinit var buttonCategoryAmount : Button
     private lateinit var buttonRewards : Button
+    private lateinit var buttonExpenseEntry : Button
+
+    private lateinit var expenseSearch :Button
+    private lateinit var buttonUserGoals : Button
 
     private lateinit var currentBalance : TextView
 
@@ -47,6 +51,9 @@ class Home : AppCompatActivity() {
         buttonCategoryAmount = findViewById(R.id.buttonCategoryAmount)
         buttonRewards = findViewById(R.id.buttonRewards)
         currentBalance = findViewById(R.id.currentBalance)
+        buttonExpenseEntry = findViewById(R.id.buttonExpenseEntry)
+        expenseSearch = findViewById(R.id.expenseSearch)
+        buttonUserGoals = findViewById(R.id.buttonUserGoals)
         getLoggedInUser()
         getCurrentBalance()
 
@@ -58,13 +65,20 @@ class Home : AppCompatActivity() {
         buttonCategoryAmount.setOnClickListener {
             openCategoryAmountsPage()
         }
+        buttonExpenseEntry.setOnClickListener {
+            openExpenseEntryPage()
+        }
 
         buttonRewards.setOnClickListener {
             openRewardsPage()
         }
 
-
-
+        expenseSearch.setOnClickListener {
+            openExpenseSearchPage()
+        }
+        buttonUserGoals.setOnClickListener {
+            openUserGoalsPage()
+        }
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
@@ -102,6 +116,22 @@ class Home : AppCompatActivity() {
 
     private fun openCategoryAmountsPage(){
         val intent= Intent(this, CategoryAmounts::class.java)
+        startActivity(intent)
+
+    }
+    private fun openExpenseEntryPage(){
+        val intent= Intent(this, AddExpense::class.java)
+        startActivity(intent)
+
+    }
+    private fun openExpenseSearchPage(){
+        val intent= Intent(this, ExpenseSearch::class.java)
+        startActivity(intent)
+
+    }
+
+    private fun openUserGoalsPage(){
+        val intent= Intent(this, UserGoals::class.java)
         startActivity(intent)
 
     }

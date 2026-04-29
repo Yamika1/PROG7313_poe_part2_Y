@@ -12,5 +12,6 @@ data class Cost(
     val category:String,
     val amount: Double,
     val date:String,
-    val description:String
+    val description:String,
+    val photoUri: String? = null
 )

@@ -17,4 +17,7 @@ interface CostDao {
 
   @Query("SELECT SUM(amount) FROM costs")
   suspend fun getTotalBalance(): Double?
+
+  @Query("SELECT * FROM costs WHERE date BETWEEN :startDate AND :endDate")
+  suspend fun getEntriesInRange(startDate:String,endDate:String):List<Cost>
 }
