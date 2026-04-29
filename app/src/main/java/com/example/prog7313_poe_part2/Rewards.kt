@@ -6,10 +6,13 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import data.database.AppDatabase
+import kotlinx.coroutines.launch
+import data.Cost
+
 
 class Rewards : AppCompatActivity() {
-
-    // global declarations
 
     private lateinit var progressXp: ProgressBar
     private lateinit var textViewLevel: TextView
@@ -18,16 +21,16 @@ class Rewards : AppCompatActivity() {
     private lateinit var textViewCreditScore: TextView
     private lateinit var buttonClaimReward: Button
 
-    private var currentXp = 0
-    private var maxXp = 2000
-    private var currentLevel = 1
-    private var creditScore = 0
+    private lateinit var db: AppDatabase
+
+    private val maxXp = 2000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_rewards)
 
-        // typecasting
+        db = AppDatabase.getDatabase(this)
+
         progressXp = findViewById(R.id.progressXp)
         textViewLevel = findViewById(R.id.textViewLevel)
         textViewXpPercent = findViewById(R.id.textViewXpPercent)
@@ -43,25 +46,39 @@ class Rewards : AppCompatActivity() {
     }
 
     private fun loadRewards() {
-        val percent = ((currentXp.toDouble() / maxXp.toDouble()) * 100).toInt()
+        lifecycleScope.launch {
+            val costs = db.costDao().getAllCosts()
+            val latestCycle = db.cycleDao().getLatestCycleGoal()
 
-        progressXp.progress = percent
-        textViewLevel.text = "Level$currentLevel"
-        textViewXpPercent.text = "$percent% TOWARDS LEVEL ${currentLevel + 1}"
-        textViewXpCount.text = "$currentXp / $maxXp XP"
-        textViewCreditScore.text = "%,d".format(creditScore)
+            var totalSpent = 0.0
+
+            for (cost in costs) {
+                totalSpent += cost.amount
+            }
+
+            var xp = costs.size * 10
+
+            if (latestCycle != null) {
+                if (totalSpent <= latestCycle.maxGoal) {
+                    xp += 50
+                }
+            }
+            val level = (xp / maxXp) + 1
+            val percent = ((xp % maxXp) * 100) / maxXp
+            val creditScore = xp + totalSpent.toInt()
+
+            runOnUiThread {
+                progressXp.progress = percent
+                textViewLevel.text = "Level $level"
+                textViewXpPercent.text = "$percent% TOWARDS LEVEL ${level + 1}"
+                textViewXpCount.text = "$xp / $maxXp XP"
+                textViewCreditScore.text = "%,d".format(creditScore)
+            }
+        }
     }
 
     private fun claimReward() {
-        currentXp += 50
-        creditScore += 50
-
-        if (currentXp >= maxXp) {
-            currentLevel++
-            currentXp -= maxXp
-        }
-
-        Toast.makeText(this, "Reward claimed successfully", Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, "reward checked successfully", Toast.LENGTH_SHORT).show()
         loadRewards()
     }
 }
