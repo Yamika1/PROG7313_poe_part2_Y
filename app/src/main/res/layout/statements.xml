@@ -47,7 +47,7 @@
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/statements_123"
+                android:text="statements_123"
                 android:textColor="#FFD700"
                 android:textSize="26sp"
                 android:textStyle="bold"
@@ -59,7 +59,7 @@
                 android:id="@+id/tvFormatsLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/formats_43"
+                android:text="formats_43"
                 android:textColor="#AAAAAA"
                 android:textSize="12sp"
                 android:textStyle="bold"
@@ -71,7 +71,7 @@
                 android:id="@+id/tvPdf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/pdf_43"
+                android:text="pdf_43"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:paddingStart="10dp"
@@ -88,7 +88,7 @@
                 android:id="@+id/tvCsv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/csv_78"
+                android:text="csv_78"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:paddingStart="10dp"
@@ -105,7 +105,7 @@
                 android:id="@+id/tvXlsx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/xlsx_89"
+                android:text="xlsx_89"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:paddingStart="10dp"
@@ -171,7 +171,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/time_period_89"
+                            android:text="time_period_89"
                             android:textStyle="bold"
                             android:textSize="14sp"
                             android:textColor="@color/black"/>
@@ -190,7 +190,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:importantForAccessibility="no"
-                            android:text="@string/oct_01_2023_353"
+                            android:text="oct_01_2023_353"
                             android:textSize="14sp"
                             android:padding="10dp"
                             android:background="@drawable/rounded_date_bg"
@@ -211,7 +211,7 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="@string/oct_31_2023_84"
+                            android:text="oct_31_2023_84"
                             android:textSize="14sp"
                             android:padding="10dp"
                             android:background="@drawable/rounded_date_bg"
@@ -227,7 +227,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/recent_activity_67"
+                android:text="recent_activity_67"
                 android:textStyle="bold"
                 android:textSize="13sp"
                 android:textColor="@color/black"
@@ -251,7 +251,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:contentDescription="@string/todo_123"
+                        android:contentDescription="todo_123"
                         android:importantForAccessibility="no"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
@@ -274,7 +274,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/october_2023_56"
+                                android:text="october_2023_56"
                                 android:textStyle="bold"
                                 android:textSize="15sp"
                                 android:textColor="@color/black"/>
@@ -282,7 +282,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/standard_monthly_report_56"
+                                android:text="standard_monthly_report_56"
                                 android:textColor="#757575"
                                 android:textSize="12sp" />
 
@@ -305,7 +305,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/pdf_89"
+                                android:text="pdf_89"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"
                                 android:layout_marginEnd="8dp"/>
@@ -313,7 +313,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/csv_8"
+                                android:text="csv_8"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"
                                 android:layout_marginEnd="8dp"/>
@@ -321,7 +321,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/xlsx_938"
+                                android:text="xlsx_938"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"/>
 
@@ -336,7 +336,7 @@
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
                             android:stateListAnimator="@null"
-                            android:text="@string/download_123"
+                            android:text="download_123"
                             android:textColor="@color/black"
                             tools:ignore="DuplicateSpeakableTextCheck" />
 
@@ -363,7 +363,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:contentDescription="@string/todo_898"
+                        android:contentDescription="todo_898"
                         android:importantForAccessibility="no"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
@@ -386,7 +386,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/september_2023_897"
+                                android:text="september_2023_897"
                                 android:textStyle="bold"
                                 android:textSize="15sp"
                                 android:textColor="@color/black"/>
@@ -394,7 +394,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/standard_monthly_report_456"
+                                android:text="standard_monthly_report_456"
                                 android:textColor="#757575"
                                 android:textSize="12sp" />
 
@@ -417,7 +417,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/pdf_678"
+                                android:text="pdf_678"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"
                                 android:layout_marginEnd="8dp"/>
@@ -425,7 +425,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/csv_652"
+                                android:text="csv_652"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"/>
 
@@ -435,7 +435,7 @@
                             android:id="@+id/btnDownloadSep"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/download_54"
+                            android:text="download_54"
                             android:textColor="@color/black"
                             android:backgroundTint="#FFD700"
                             android:paddingStart="20dp"
@@ -466,7 +466,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:contentDescription="@string/todo_878"
+                        android:contentDescription="todo_878"
                         android:importantForAccessibility="no"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
@@ -489,7 +489,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/august_2023_234"
+                                android:text="august_2023_234"
                                 android:textStyle="bold"
                                 android:textSize="15sp"
                                 android:textColor="@color/black"/>
@@ -497,7 +497,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/standard_monthly_report_345"
+                                android:text="standard_monthly_report_345"
                                 android:textSize="12sp"
                                 android:textColor="#888888"/>
 
@@ -520,7 +520,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/pdf_897"
+                                android:text="pdf_897"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"
                                 android:layout_marginEnd="8dp"/>
@@ -539,7 +539,7 @@
                             android:id="@+id/btnDownloadAug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/download_42"
+                            android:text="download_42"
                             android:textColor="@color/black"
                             android:backgroundTint="#FFD700"
                             android:paddingStart="20dp"
@@ -570,7 +570,7 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:contentDescription="@string/todo_35"
+                        android:contentDescription="todo_35"
                         android:importantForAccessibility="no"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
@@ -591,7 +591,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/july_2023_89"
+                                android:text="july_2023_89"
                                 android:textStyle="bold"
                                 android:textSize="15sp"
                                 android:textColor="@color/black"/>
@@ -599,7 +599,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/standard_monthly_report_89"
+                                android:text="standard_monthly_report_89"
                                 android:textSize="12sp"
                                 android:textColor="#888888"/>
 
@@ -622,7 +622,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="@string/pdf_899"
+                                android:text="pdf_899"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"/>
 
@@ -632,7 +632,7 @@
                             android:id="@+id/btnDownloadJul"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/download_45"
+                            android:text="download_45"
                             android:textColor="@color/black"
                             android:backgroundTint="#FFD700"
                             android:paddingStart="20dp"
@@ -650,7 +650,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                android:contentDescription="@string/todo_88"
+                android:contentDescription="todo_88"
                 android:importantForAccessibility="no"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp"
@@ -659,7 +659,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:contentDescription="@string/todo_78"
+                    android:contentDescription="todo_78"
                     android:importantForAccessibility="no"
                     android:orientation="vertical"
                     android:gravity="center"
@@ -676,7 +676,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/upload_external_docs_89"
+                        android:text="upload_external_docs_89"
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:textColor="@color/black"
@@ -685,7 +685,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/sync_external_bank_statements_to_your_profile_for_unified_analysis_89"
+                        android:text="sync_external_bank_statements_to_your_profile_for_unified_analysis_89"
                         android:textSize="12sp"
                         android:textColor="#888888"
                         android:gravity="center"
@@ -699,7 +699,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/pdf_78"
+                            android:text="pdf_78"
                             android:textSize="12sp"
                             android:textColor="#888888"
                             android:layout_marginEnd="8dp"/>
@@ -707,7 +707,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/csv_54"
+                            android:text="csv_54"
                             android:textSize="12sp"
                             android:textColor="#888888"
                             android:layout_marginEnd="8dp"/>
@@ -715,7 +715,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/docx_123"
+                            android:text="docx_123"
                             android:textSize="12sp"
                             android:textColor="#888888"
                             android:layout_marginEnd="8dp"/>
@@ -723,7 +723,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/jpg_123"
+                            android:text="jpg_123"
                             android:textSize="12sp"
                             android:textColor="#888888"
                             android:layout_marginEnd="8dp"
@@ -732,7 +732,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/png_78"
+                            android:text="png_78"
                             android:textSize="12sp"
                             android:textColor="#888888"/>
 
