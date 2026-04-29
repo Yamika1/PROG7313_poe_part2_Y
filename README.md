@@ -50,9 +50,6 @@ We used a Room Database with three main tables:
 Each table has a DAO to handle database operations like inserting,retrieving, updataing data
 
 
-## Video Demonstration
-YouTube Link: 
-
 
 ## Contributors
 
