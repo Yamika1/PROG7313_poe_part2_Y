@@ -31,15 +31,7 @@
     <string name="enter_the_minimum_goal">Enter the minimum goal</string>
     <string name="goals">Goals</string>
     <string name="save">Save</string>
-    <string name="create_new_account">create new account</string>
-    <string name="budgetbee">budgetbee</string>
-    <string name="first_name">first name</string>
-    <string name="last_name">last name</string>
-    <string name="email">Email</string>
-    <string name="confirm_password">Confirm password</string>
-    <string name="register">register</string>
-    <string name="profile_pic">profile_pic</string>
-    <string name="already_have_an_account_click_here_to_login">already have an account click here to login</string>
+
 
     <string name="create_new_account">Create New Account</string>
     <string name="create_new">Create New</string>
