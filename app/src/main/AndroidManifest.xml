@@ -19,13 +19,19 @@
             android:name=".UserGoals"
             android:exported="false" />
         <activity
+            android:name=".Navigation"
+            android:exported="false" />
+        <activity
+            android:name=".UserGoals"
+            android:exported="false" />
+        <activity
             android:name=".Take_photo"
             android:exported="false" />
         <activity
             android:name=".Costs"
             android:exported="false" />
         <activity
-            android:name=".Expenses"
+            android:name=".AddExpense"
             android:exported="false" />
         <activity
             android:name=".Register"
@@ -39,10 +45,13 @@
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

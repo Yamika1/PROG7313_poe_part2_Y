@@ -5,6 +5,7 @@ import android.graphics.Paint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageButton
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -29,6 +30,8 @@ class Register : AppCompatActivity(){
     private lateinit var buttonLogin : Button
 
     private lateinit var buttonRegister : Button
+
+    private lateinit var imageButtonProfilePic : ImageButton
     private lateinit var db: AppDatabase
 
 
@@ -37,6 +40,7 @@ class Register : AppCompatActivity(){
         enableEdgeToEdge()
         setContentView(R.layout.activity_register)
 
+        imageButtonProfilePic = findViewById(R.id.imageButtonProfilePic)
         heading = findViewById(R.id.heading)
         editTextFName = findViewById(R.id.editTextFName)
         editTextLName = findViewById(R.id.editTextLName)
@@ -46,7 +50,14 @@ class Register : AppCompatActivity(){
         editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword)
         buttonLogin = findViewById(R.id.buttonLogin)
         buttonRegister = findViewById(R.id.buttonRegister)
+        db = AppDatabase.getDatabase(this)
+
         heading.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+
+
+        buttonRegister.setOnClickListener {
+            registerUser()
+        }
 
         buttonLogin.setOnClickListener {
             openLoginScreen()
@@ -59,91 +70,81 @@ class Register : AppCompatActivity(){
         }
     }
 
-        private fun registerUser() {
+    private fun registerUser() {
 
-            val firstName = editTextFName.text.toString().trim()
-            val lastName = editTextLName.text.toString().trim()
-            val email = editTextEmail.text.toString().trim()
-            val userName = editTextUsername.text.toString().trim()
-            val password = editTextPassword.text.toString().trim()
-            val confirmPassword = editTextConfirmPassword.text.toString().trim()
-
-           db = AppDatabase.getDatabase(this)
-
-            buttonRegister.setOnClickListener {
-                registerUser()
-            }
-
-
-            buttonLogin.setOnClickListener {
-                openLoginScreen()
-            }
-
-
-            if (firstName.isEmpty() || lastName.isEmpty()|| email.isEmpty() || userName.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
-                return //stops function if validation fails
-
-            }
-            //check if passwords match
-            if (password != confirmPassword) {
-                Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
-            }
-
-
-            lifecycleScope.launch {
+        val firstName = editTextFName.text.toString().trim()
+        val lastName = editTextLName.text.toString().trim()
+        val email = editTextEmail.text.toString().trim()
+        val userName = editTextUsername.text.toString().trim()
+        val password = editTextPassword.text.toString().trim()
+        val confirmPassword = editTextConfirmPassword.text.toString().trim()
 
 
 
-                val existingUser = db.userDao().getUserByUsername(userName)
 
-                if (existingUser != null) {
+        if (firstName.isEmpty() || lastName.isEmpty()|| email.isEmpty() || userName.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+            Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
+            return
 
-                    runOnUiThread {
-                        Toast.makeText(this@Register, "Username already exists", Toast.LENGTH_SHORT).show()
-                    }
-                } else {
+        }
 
-
-                    val newUser = User(
-                        firstName = firstName,
-                        lastName = lastName,
-                        email = email,
-                        username = userName,
-                        password = password
-                    )
+        if (password != confirmPassword) {
+            Toast.makeText(this, "Passwords don't match", Toast.LENGTH_SHORT).show()
+            return
+        }
 
 
-                    db.userDao().insertUser(newUser)
+        lifecycleScope.launch {
+            val existingUser = db.userDao().getUserByUsername(userName)
 
 
-                    runOnUiThread {
-                        Toast.makeText(this@Register, "Registration successful", Toast.LENGTH_SHORT)
-                            .show()
+            if (existingUser != null) {
 
-                        clearFields()
-                        openLoginScreen()
-                    }
+                runOnUiThread {
+                    Toast.makeText(this@Register, "This username already exists", Toast.LENGTH_SHORT).show()
                 }
+            } else {
 
 
+                val newUser = User(
+                    firstName = firstName,
+                    lastName = lastName,
+                    email = email,
+                    username = userName,
+                    password = password
+                )
+
+
+                db.userDao().insertUser(newUser)
+
+
+                runOnUiThread {
+                    Toast.makeText(this@Register, "New account successfully created", Toast.LENGTH_SHORT)
+                        .show()
+
+                    clearFields()
+                    openLoginScreen()
+                }
             }
-        }
 
 
-        private fun openLoginScreen() {
-            val intent = Intent(this, Register::class.java)
-            startActivity(intent)
-            finish()
-
-        }
-
-        private fun clearFields(){
-            editTextFName.text.clear()
-            editTextLName.text.clear()
-            editTextUsername.text.clear()
-            editTextEmail.text.clear()
-            editTextPassword.text.clear()
-            editTextConfirmPassword.text.clear()
         }
     }
+
+
+    private fun openLoginScreen() {
+        val intent = Intent(this, MainActivity::class.java)
+        startActivity(intent)
+        finish()
+
+    }
+
+    private fun clearFields(){
+        editTextFName.text.clear()
+        editTextLName.text.clear()
+        editTextUsername.text.clear()
+        editTextEmail.text.clear()
+        editTextPassword.text.clear()
+        editTextConfirmPassword.text.clear()
+    }
+}

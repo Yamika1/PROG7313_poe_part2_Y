@@ -66,7 +66,7 @@
 
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/downloadStatement_button"
+        android:id="@+id/buttonDownloadStatement"
         android:layout_width="161dp"
         android:layout_height="156dp"
         android:gravity="bottom|center_horizontal"
@@ -88,7 +88,7 @@
         app:layout_constraintVertical_bias="0.339" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/categoryAmount_button"
+        android:id="@+id/buttonCategoryAmount"
         android:layout_width="161dp"
         android:layout_height="156dp"
         android:gravity="bottom|center_horizontal"
@@ -110,7 +110,7 @@
         app:layout_constraintVertical_bias="0.339" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/Rewards_button"
+        android:id="@+id/buttonRewards"
         android:layout_width="161dp"
         android:layout_height="156dp"
         android:gravity="bottom|center_horizontal"
