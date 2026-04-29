@@ -9,10 +9,12 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import data.Cost
+import data.database.AppDatabase
+import kotlinx.coroutines.launch
 
 class AddExpense : AppCompatActivity() {
-
-    // global declarations
 
     private lateinit var editTextAmount: EditText
     private lateinit var editTextDate: EditText
@@ -27,14 +29,16 @@ class AddExpense : AppCompatActivity() {
     private lateinit var buttonSaveExpense: Button
     private lateinit var buttonCancel: TextView
 
-    private var selectedCategory = "Groceries"
+    private lateinit var db: AppDatabase
 
+    private var selectedCategory = "Groceries"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_expense)
 
-        // typecasting
+        db = AppDatabase.getDatabase(this)
+
         editTextAmount = findViewById(R.id.editTextAmount)
         editTextDate = findViewById(R.id.editTextDate)
         editTextDescription = findViewById(R.id.editTextDescription)
@@ -109,8 +113,25 @@ class AddExpense : AppCompatActivity() {
             return
         }
 
-        Toast.makeText(this, "expense saved: $selectedCategory", Toast.LENGTH_SHORT).show()
+        val cost = Cost(
+            category = selectedCategory,
+            amount = amount,
+            date = date,
+            description = description
+        )
 
+        lifecycleScope.launch {
+            db.costDao().insertCost(cost)
+
+            runOnUiThread {
+                Toast.makeText(this@AddExpense, "expense saved successfully", Toast.LENGTH_SHORT).show()
+                clearFields()
+                finish()
+            }
+        }
+    }
+
+    private fun clearFields() {
         editTextAmount.text.clear()
         editTextDate.text.clear()
         editTextDescription.text.clear()

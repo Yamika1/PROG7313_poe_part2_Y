@@ -6,17 +6,18 @@ import androidx.room.Query
 import androidx.room.Update
 import data.CycleGoal
 
-
 @Dao
-interface CycleDao{
+interface CycleDao {
 
     @Insert
-    suspend fun insertGoal(goal:CycleGoal)
+    suspend fun insertCycleGoal(cycleGoal: CycleGoal)
 
-    @Update()
-    suspend fun updateGoal(goal: CycleGoal)
+    @Update
+    suspend fun updateCycleGoal(cycleGoal: CycleGoal)
 
-    @Query("SELECT*FROM cycle_goals LIMIT 1")
-    suspend fun getGoal(): CycleGoal
+    @Query("SELECT * FROM cycle_goals WHERE month = :month LIMIT 1")
+    suspend fun getCycleGoalByMonth(month: String): CycleGoal?
 
+    @Query("SELECT * FROM cycle_goals ORDER BY cycleId DESC LIMIT 1")
+    suspend fun getLatestCycleGoal(): CycleGoal?
 }
