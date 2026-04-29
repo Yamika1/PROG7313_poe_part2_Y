@@ -2,6 +2,7 @@ package com.example.prog7313_poe_part2
 
 import android.os.Bundle
 import android.widget.TextView
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.lifecycleScope
 import data.database.AppDatabase
@@ -31,6 +32,7 @@ class CategoryAmounts : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        enableEdgeToEdge()
         setContentView(R.layout.activity_category_amounts)
 
         db = AppDatabase.getDatabase(this)

@@ -32,18 +32,18 @@
     <string name="goals">Goals</string>
     <string name="save">Save</string>
 
-    <string name="create_new_account">create new account</string>
-    <string name="budgetbee">budgetbee</string>
-    <string name="first_name">first name</string>
-    <string name="last_name">last name</string>
+    <string name="create_new_account">Create New Account</string>
+    <string name="create_new">Create New</string>
+    <string name="budgetbee">BudgetBee</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
     <string name="email">Email</string>
-    <string name="confirm_password">Confirm password</string>
-    <string name="register">register</string>
-    <string name="profile_pic">profile_pic</string>
-    <string name="already_have_an_account_click_here_to_login">already have an account click here to login</string>
+    <string name="register">Register</string>
+    <string name="profile_pic">Profile Pic</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="already_have_an_account_click_here_to_login">Already have an account? Click here to login</string>
 
     <string name="welcome">Welcome!</string>
-    <string name="search_transactions">Search Transactions</string>
     <string name="download_statement">Download Statement</string>
     <string name="expense_entry">Expense Entry</string>
     <string name="category_amounts">Category Amounts</string>
@@ -56,5 +56,11 @@
     <string name="add_budget">ADD BUDGET</string>
     <string name="settings">SETTINGS</string>
     <string name="rewards">REWARDS</string>
+    <string name="Rewards">Rewards</string>
     <string name="wallet">WALLET</string>
+    <string name="search_expenses">Expense Search</string>
+    <string name="enter_a_start_date">Enter a start date</string>
+    <string name="enter_an_end_date">Enter an end date</string>
+    <string name="no_results_found">No results found</string>
+    <string name="user_goals">User Goals</string>
 </resources>

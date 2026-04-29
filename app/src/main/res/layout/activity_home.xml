@@ -7,6 +7,28 @@
     android:layout_height="match_parent"
     tools:context=".Home">
 
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonUserGoals"
+        android:layout_width="129dp"
+        android:layout_height="109dp"
+        android:gravity="bottom|center_horizontal"
+        android:text="@string/user_goals"
+        android:textColor="#DCC605"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:backgroundTint="@color/black"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_goal"
+        app:iconGravity="top"
+        app:iconSize="50dp"
+        app:iconTint="#DCC605"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.501" />
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
@@ -67,69 +89,91 @@
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonDownloadStatement"
-        android:layout_width="161dp"
-        android:layout_height="156dp"
+        android:layout_width="129dp"
+        android:layout_height="109dp"
         android:gravity="bottom|center_horizontal"
         android:text="@string/download_statement"
         android:textColor="#DCC605"
-        android:textSize="18sp"
+        android:textSize="13sp"
         android:textStyle="bold"
         app:backgroundTint="@color/black"
         app:cornerRadius="12dp"
         app:icon="@drawable/ic_document"
         app:iconGravity="top"
-        app:iconSize="55dp"
+        app:iconSize="50dp"
         app:iconTint="#DCC605"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.171"
+        app:layout_constraintHorizontal_bias="0.056"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
+        app:layout_constraintVertical_bias="0.327" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/buttonCategoryAmount"
-        android:layout_width="161dp"
-        android:layout_height="156dp"
+        android:layout_width="129dp"
+        android:layout_height="109dp"
         android:gravity="bottom|center_horizontal"
         android:text="@string/category_amounts"
         android:textColor="#DCC605"
-        android:textSize="18sp"
+        android:textSize="13sp"
         android:textStyle="bold"
         app:backgroundTint="@color/black"
         app:cornerRadius="12dp"
         app:icon="@drawable/ic_category"
         app:iconGravity="top"
-        app:iconSize="55dp"
+        app:iconSize="50dp"
         app:iconTint="#DCC605"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.936"
+        app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
+        app:layout_constraintVertical_bias="0.655" />
 
     <com.google.android.material.button.MaterialButton
-        android:id="@+id/buttonRewards"
-        android:layout_width="161dp"
-        android:layout_height="156dp"
+        android:id="@+id/buttonExpenseEntry"
+        android:layout_width="129dp"
+        android:layout_height="109dp"
         android:gravity="bottom|center_horizontal"
-        android:text="@string/rewards"
+        android:text="@string/expense_entry"
         android:textColor="@color/black"
-        android:textSize="18sp"
+        android:textSize="13sp"
         android:textStyle="bold"
         app:backgroundTint="#DCC605"
         app:cornerRadius="12dp"
-        app:icon="@drawable/ic_progress"
+        app:icon="@drawable/ic_money"
         app:iconGravity="top"
-        app:iconSize="55dp"
+        app:iconSize="50dp"
         app:iconTint="@color/black"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.548"
+        app:layout_constraintHorizontal_bias="0.943"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.64" />
+        app:layout_constraintVertical_bias="0.326" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/buttonRewards"
+        android:layout_width="129dp"
+        android:layout_height="109dp"
+        android:gravity="bottom|center_horizontal"
+        android:text="@string/Rewards"
+        android:textColor="@color/black"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        app:backgroundTint="#DCC605"
+        app:cornerRadius="12dp"
+        app:icon="@drawable/ic_trophy"
+        app:iconGravity="top"
+        app:iconSize="50dp"
+        app:iconTint="@color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.056"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.675" />
 
     <TextView
         android:id="@+id/currentBalance"
@@ -142,10 +186,9 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.83" />
+        app:layout_constraintVertical_bias="0.821" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
@@ -160,6 +203,18 @@
         app:itemTextColor="#DCC605"
         />
 
+    <Button
+        android:id="@+id/expenseSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/black"
+        android:text="@string/search_expenses"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.206" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
