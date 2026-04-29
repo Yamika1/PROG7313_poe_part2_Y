@@ -7,6 +7,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import android.widget.ImageView
 
 class Statements : AppCompatActivity() {
 
@@ -17,7 +18,7 @@ class Statements : AppCompatActivity() {
         setContentView(R.layout.statements)
 
 
-        val getToActivity = findViewById<ImageButton>(R.id.btnBack)
+        val getToActivity = findViewById<ImageView>(R.id.btnBack)
         getToActivity.setOnClickListener {
             val intent = Intent(applicationContext, Home::class.java)
             startActivity(intent)

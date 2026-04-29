@@ -22,7 +22,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var button: Button
     private lateinit var button2: Button
     private lateinit var db: AppDatabase
-   // private lateinit var db: AppDatabase
+
 
 
 
