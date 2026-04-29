@@ -17,16 +17,16 @@ class Statements : AppCompatActivity() {
         setContentView(R.layout.statements)
 
 
-        val getToActivity = findViewById<ImageButton>(R.id.backbutton)
+        val getToActivity = findViewById<ImageButton>(R.id.btnBack)
         getToActivity.setOnClickListener {
-            val intent = Intent(getApplicationContext(), Home::class.java)
+            val intent = Intent(applicationContext, Home::class.java)
             startActivity(intent)
         }
 
-        getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
-            ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.scrollView2)) { v, insets ->
                 val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
                 v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
                 insets
