@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F5F5F5">
@@ -26,7 +27,8 @@
                 android:id="@+id/btnBack"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/arrow"
+                android:importantForAccessibility="no"
+                android:src="@drawable/backbutton"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:tint="#FFFFFF" />
@@ -35,7 +37,7 @@
                 android:id="@+id/btnSearch"
                 android:layout_width="36dp"
                 android:layout_height="36dp"
-                android:src="@drawable/search"
+                android:importantForAccessibility="no" android:src="@drawable/search"
                 android:background="@drawable/rounded_search_bg"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -45,7 +47,7 @@
                 android:id="@+id/tvTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Statements"
+                android:text="statements_123"
                 android:textColor="#FFD700"
                 android:textSize="26sp"
                 android:textStyle="bold"
@@ -57,7 +59,7 @@
                 android:id="@+id/tvFormatsLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="FORMATS:"
+                android:text="formats_43"
                 android:textColor="#AAAAAA"
                 android:textSize="12sp"
                 android:textStyle="bold"
@@ -69,7 +71,7 @@
                 android:id="@+id/tvPdf"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PDF"
+                android:text="pdf_43"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:paddingStart="10dp"
@@ -86,7 +88,7 @@
                 android:id="@+id/tvCsv"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CSV"
+                android:text="csv_78"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:paddingStart="10dp"
@@ -103,7 +105,7 @@
                 android:id="@+id/tvXlsx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="XLSX"
+                android:text="xlsx_89"
                 android:textColor="#FFFFFF"
                 android:textSize="12sp"
                 android:paddingStart="10dp"
@@ -153,20 +155,23 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:importantForAccessibility="no"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
-                        android:layout_marginBottom="12dp">
+                        android:layout_marginBottom="12dp"
+                        tools:ignore="UseCompoundDrawables">
 
                         <ImageView
                             android:layout_width="20dp"
                             android:layout_height="20dp"
+                            android:importantForAccessibility="no"
                             android:src="@drawable/calendar"
                             android:layout_marginEnd="8dp"/>
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="TIME PERIOD"
+                            android:text="time_period_89"
                             android:textStyle="bold"
                             android:textSize="14sp"
                             android:textColor="@color/black"/>
@@ -184,7 +189,8 @@
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Oct 01, 2023"
+                            android:importantForAccessibility="no"
+                            android:text="oct_01_2023_353"
                             android:textSize="14sp"
                             android:padding="10dp"
                             android:background="@drawable/rounded_date_bg"
@@ -192,18 +198,20 @@
                             android:textColor="@color/black"/>
 
                         <ImageView
-                            android:layout_width="105dp"
-                            android:layout_height="62dp"
+                            android:layout_width="76dp"
+                            android:layout_height="64dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginEnd="8dp"
-                            android:src="@drawable/arrow" />
+                            android:importantForAccessibility="no"
+                            android:src="@drawable/arrow"
+                            tools:ignore="ImageContrastCheck" />
 
                         <TextView
                             android:id="@+id/tvEndDate"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Oct 31, 2023"
+                            android:text="oct_31_2023_84"
                             android:textSize="14sp"
                             android:padding="10dp"
                             android:background="@drawable/rounded_date_bg"
@@ -219,11 +227,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="RECENT ACTIVITY"
+                android:text="recent_activity_67"
                 android:textStyle="bold"
                 android:textSize="13sp"
                 android:textColor="@color/black"
-                android:layout_marginBottom="10dp"/>
+                android:layout_marginBottom="10dp"
+                tools:ignore="HardcodedText" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
@@ -242,6 +251,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:contentDescription="todo_123"
+                        android:importantForAccessibility="no"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="8dp">
@@ -249,8 +260,10 @@
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
+                            android:layout_marginEnd="12dp"
+                            android:importantForAccessibility="no"
                             android:src="@drawable/ic_document"
-                            android:layout_marginEnd="12dp"/>
+                            tools:ignore="ImageContrastCheck" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -261,7 +274,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="October 2023"
+                                android:text="october_2023_56"
                                 android:textStyle="bold"
                                 android:textSize="15sp"
                                 android:textColor="@color/black"/>
@@ -269,9 +282,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Standard Monthly Report"
-                                android:textSize="12sp"
-                                android:textColor="#888888"/>
+                                android:text="standard_monthly_report_56"
+                                android:textColor="#757575"
+                                android:textSize="12sp" />
 
                         </LinearLayout>
 
@@ -292,7 +305,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="PDF"
+                                android:text="pdf_89"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"
                                 android:layout_marginEnd="8dp"/>
@@ -300,7 +313,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="CSV"
+                                android:text="csv_8"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"
                                 android:layout_marginEnd="8dp"/>
@@ -308,7 +321,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="XLSX"
+                                android:text="xlsx_938"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"/>
 
@@ -316,15 +329,16 @@
 
                         <Button
                             android:id="@+id/btnDownload"
+                            style="@style/Widget.MaterialComponents.Button"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Download"
-                            android:textColor="@color/black"
                             android:backgroundTint="#FFD700"
                             android:paddingStart="20dp"
                             android:paddingEnd="20dp"
                             android:stateListAnimator="@null"
-                            style="@style/Widget.MaterialComponents.Button"/>
+                            android:text="download_123"
+                            android:textColor="@color/black"
+                            tools:ignore="DuplicateSpeakableTextCheck" />
 
                     </LinearLayout>
 
@@ -349,6 +363,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:contentDescription="todo_898"
+                        android:importantForAccessibility="no"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="8dp">
@@ -356,8 +372,10 @@
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
+                            android:layout_marginEnd="12dp"
+                            android:importantForAccessibility="no"
                             android:src="@drawable/ic_document"
-                            android:layout_marginEnd="12dp"/>
+                            tools:ignore="ImageContrastCheck" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -368,7 +386,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="September 2023"
+                                android:text="september_2023_897"
                                 android:textStyle="bold"
                                 android:textSize="15sp"
                                 android:textColor="@color/black"/>
@@ -376,9 +394,9 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Standard Monthly Report"
-                                android:textSize="12sp"
-                                android:textColor="#888888"/>
+                                android:text="standard_monthly_report_456"
+                                android:textColor="#757575"
+                                android:textSize="12sp" />
 
                         </LinearLayout>
 
@@ -399,7 +417,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="PDF"
+                                android:text="pdf_678"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"
                                 android:layout_marginEnd="8dp"/>
@@ -407,7 +425,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="CSV"
+                                android:text="csv_652"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"/>
 
@@ -417,7 +435,7 @@
                             android:id="@+id/btnDownloadSep"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Download"
+                            android:text="download_54"
                             android:textColor="@color/black"
                             android:backgroundTint="#FFD700"
                             android:paddingStart="20dp"
@@ -448,6 +466,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:contentDescription="todo_878"
+                        android:importantForAccessibility="no"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="8dp">
@@ -455,8 +475,10 @@
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
+                            android:layout_marginEnd="12dp"
+                            android:importantForAccessibility="no"
                             android:src="@drawable/ic_document"
-                            android:layout_marginEnd="12dp"/>
+                            tools:ignore="ImageContrastCheck" />
 
                         <LinearLayout
                             android:layout_width="0dp"
@@ -467,7 +489,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="August 2023"
+                                android:text="august_2023_234"
                                 android:textStyle="bold"
                                 android:textSize="15sp"
                                 android:textColor="@color/black"/>
@@ -475,7 +497,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Standard Monthly Report"
+                                android:text="standard_monthly_report_345"
                                 android:textSize="12sp"
                                 android:textColor="#888888"/>
 
@@ -498,7 +520,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="PDF"
+                                android:text="pdf_897"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"
                                 android:layout_marginEnd="8dp"/>
@@ -508,7 +530,8 @@
                                 android:layout_height="wrap_content"
                                 android:text="XLSX"
                                 android:textSize="12sp"
-                                android:textColor="@color/black"/>
+                                android:textColor="@color/black"
+                                tools:ignore="HardcodedText" />
 
                         </LinearLayout>
 
@@ -516,7 +539,7 @@
                             android:id="@+id/btnDownloadAug"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Download"
+                            android:text="download_42"
                             android:textColor="@color/black"
                             android:backgroundTint="#FFD700"
                             android:paddingStart="20dp"
@@ -547,6 +570,8 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:contentDescription="todo_35"
+                        android:importantForAccessibility="no"
                         android:orientation="horizontal"
                         android:gravity="center_vertical"
                         android:layout_marginBottom="8dp">
@@ -554,7 +579,7 @@
                         <ImageView
                             android:layout_width="36dp"
                             android:layout_height="36dp"
-                            android:src="@drawable/ic_document"
+                            android:importantForAccessibility="no" android:src="@drawable/ic_document"
                             android:layout_marginEnd="12dp"/>
 
                         <LinearLayout
@@ -566,7 +591,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="July 2023"
+                                android:text="july_2023_89"
                                 android:textStyle="bold"
                                 android:textSize="15sp"
                                 android:textColor="@color/black"/>
@@ -574,7 +599,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Standard Monthly Report"
+                                android:text="standard_monthly_report_89"
                                 android:textSize="12sp"
                                 android:textColor="#888888"/>
 
@@ -597,7 +622,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="PDF"
+                                android:text="pdf_899"
                                 android:textSize="12sp"
                                 android:textColor="@color/black"/>
 
@@ -607,7 +632,7 @@
                             android:id="@+id/btnDownloadJul"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Download"
+                            android:text="download_45"
                             android:textColor="@color/black"
                             android:backgroundTint="#FFD700"
                             android:paddingStart="20dp"
@@ -625,6 +650,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
+                android:contentDescription="todo_88"
+                android:importantForAccessibility="no"
                 app:cardCornerRadius="12dp"
                 app:cardElevation="0dp"
                 app:cardBackgroundColor="#FFFDE7">
@@ -632,6 +659,8 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:contentDescription="todo_78"
+                    android:importantForAccessibility="no"
                     android:orientation="vertical"
                     android:gravity="center"
                     android:padding="24dp">
@@ -639,7 +668,7 @@
                     <ImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:src="@drawable/ic_document"
+                        android:importantForAccessibility="no" android:src="@drawable/ic_document"
                         android:background="@drawable/rounded_yellow_bg"
                         android:padding="12dp"
                         android:layout_marginBottom="12dp"/>
@@ -647,7 +676,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Upload External Docs"
+                        android:text="upload_external_docs_89"
                         android:textStyle="bold"
                         android:textSize="16sp"
                         android:textColor="@color/black"
@@ -656,7 +685,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Sync external bank statements to your profile for unified analysis."
+                        android:text="sync_external_bank_statements_to_your_profile_for_unified_analysis_89"
                         android:textSize="12sp"
                         android:textColor="#888888"
                         android:gravity="center"
@@ -670,7 +699,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=".pdf"
+                            android:text="pdf_78"
                             android:textSize="12sp"
                             android:textColor="#888888"
                             android:layout_marginEnd="8dp"/>
@@ -678,7 +707,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=".csv"
+                            android:text="csv_54"
                             android:textSize="12sp"
                             android:textColor="#888888"
                             android:layout_marginEnd="8dp"/>
@@ -686,7 +715,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=".docx"
+                            android:text="docx_123"
                             android:textSize="12sp"
                             android:textColor="#888888"
                             android:layout_marginEnd="8dp"/>
@@ -694,15 +723,16 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=".jpg"
+                            android:text="jpg_123"
                             android:textSize="12sp"
                             android:textColor="#888888"
-                            android:layout_marginEnd="8dp"/>
+                            android:layout_marginEnd="8dp"
+                            tools:ignore="TooManyViews" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text=".png"
+                            android:text="png_78"
                             android:textSize="12sp"
                             android:textColor="#888888"/>
 
@@ -720,7 +750,7 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="#FF000000"
         app:menu="@menu/bottom_menu"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
